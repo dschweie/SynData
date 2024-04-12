@@ -1,0 +1,39 @@
+service_id,block_id,number_range_min,number_range_max,provider,former_provider
+15,019,100000,999999,Tismi BV,
+15,11,1000000,9999999,Telekom Deutschland GmbH,
+15,12,1000000,9999999,Telekom Deutschland GmbH,
+15,14,1000000,9999999,Telekom Deutschland GmbH,
+15,15,1000000,9999999,Telekom Deutschland GmbH,
+15,16,1000000,9999999,Telekom Deutschland GmbH,
+15,17,1000000,9999999,Telekom Deutschland GmbH,
+15,20,1000000,9999999,Vodafone GmbH,
+15,21,1000000,9999999,Lycamobile Europe Ltd.,
+15,22,1000000,9999999,Vodafone GmbH,
+15,23,1000000,9999999,Vodafone GmbH,
+15,25,1000000,9999999,Vodafone GmbH,
+15,26,1000000,9999999,Vodafone GmbH,
+15,29,1000000,9999999,Vodafone GmbH,Truphone GmbH ehemals Fa. Tru GmbH
+15,566,100000,999999,Drillisch Online AG,
+15,630,100000,999999,multiConnect GmbH,
+15,678,100000,999999,Argon Networks UG,
+15,70,1000000,9999999,Telefónica Germany GmbH & Co. OHG,E-Plus Mobilfunk GmbH
+15,73,1000000,9999999,Telefónica Germany GmbH & Co. OHG,E-Plus Mobilfunk GmbH
+15,75,1000000,9999999,Telefónica Germany GmbH & Co. OHG,E-Plus Mobilfunk GmbH
+15,77,1000000,9999999,Telefónica Germany GmbH & Co. OHG,E-Plus Mobilfunk GmbH
+15,78,1000000,9999999,Telefónica Germany GmbH & Co. OHG,E-Plus Mobilfunk GmbH
+15,79,1000000,9999999,Telefónica Germany GmbH & Co. OHG,Fa. Sipgate Wireless GmbH zuvor Fa. Vintage Wireless Networks Gesellschaft für Telekommunikation mbH
+15,888,100000,999999,TelcoVillage GmbH,
+15,90,1000000,9999999,Telefónica Germany GmbH & Co. OHG,
+16,0,1000000,9999999,Telekom Deutschland GmbH,
+16,2,1000000,9999999,Vodafone GmbH,
+16,3,1000000,9999999,Telefónica Germany GmbH & Co. OHG,E-Plus Mobilfunk GmbH
+17,0,1000000,9999999,Telekom Deutschland GmbH,
+17,1,10000000,99999999,Telekom Deutschland GmbH,
+17,2,1000000,9999999,Vodafone GmbH,
+17,3,10000000,99999999,Vodafone GmbH,
+17,4,10000000,99999999,Vodafone GmbH,
+17,5,1000000,9999999,Telekom Deutschland GmbH,
+17,6,1000000,9999999,Telefónica Germany GmbH & Co. OHG,
+17,7,1000000,9999999,Telefónica Germany GmbH & Co. OHG,E-Plus Mobilfunk GmbH
+17,8,10000000,99999999,Telefónica Germany GmbH & Co. OHG,E-Plus Mobilfunk GmbH
+17,9,10000000,99999999,Telefónica Germany GmbH & Co. OHG,
