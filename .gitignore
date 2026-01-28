@@ -127,3 +127,11 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Robot Framework Logs
+/results/**/*.*
+
+# LF-ET backup / temp files
+/lfet/**/*.lfet.$bak.*
+/lfet/**/*.lfet.*.$bak
+/lfet/**/*.lfet_$temp

@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<LFET version="LF-ET 2.4.1 (260127a)" language="German" saveDate="2026.01.28 at 14:47:20 CET" saveUser="dschweie">
+  <Conditions>
+    <Condition uId="17695068074589721">
+      <Title language="German" value="Current Mode"/>
+      <ConditionOccurrences>
+        <ConditionOccurrence uId="17695051881989529">
+          <Symbol language="German" value="DEF"/>
+          <Title language="German" value="The default mode, in which random data is to be generated."/>
+          <SourceCode codeLanguage="Python" sourceCodeType="LogArg" value="( instance.MODE_DEF == instance.get_mode() )"/>
+        </ConditionOccurrence>
+        <ConditionOccurrence uId="17695051882009531">
+          <Symbol language="German" value="REP"/>
+          <Title language="German" value="In this mode, the data should be “played back” based on a recording."/>
+        </ConditionOccurrence>
+      </ConditionOccurrences>
+    </Condition>
+    <Condition uId="17695068562799730">
+      <Title language="German" value="Context is"/>
+      <ConditionOccurrences>
+        <ConditionOccurrence uId="17695070862679776">
+          <Symbol language="German" value="None"/>
+          <Title language="German" value="There is no set context."/>
+          <SourceCode codeLanguage="Python" sourceCodeType="LogArg" value="( None == instance.Get_Context() )"/>
+        </ConditionOccurrence>
+        <ConditionOccurrence uId="17695070862659774">
+          <Symbol language="German" value="Set"/>
+          <Title language="German" value="There is a defined context."/>
+        </ConditionOccurrence>
+      </ConditionOccurrences>
+    </Condition>
+    <Condition uId="17695091338479965">
+      <Title language="German" value="Requested item is"/>
+      <ConditionOccurrences>
+        <ConditionOccurrence uId="17695092231180023">
+          <Symbol language="German" value="unknown"/>
+          <Title language="German" value="The requested item has not yet been created within the context."/>
+          <SourceCode codeLanguage="Python" sourceCodeType="LogArg" value="( None == instance.get_item(item) )"/>
+        </ConditionOccurrence>
+        <ConditionOccurrence uId="17695092231160021">
+          <Symbol language="German" value="known"/>
+          <Title language="German" value="The requested item is already part of the data in the context."/>
+        </ConditionOccurrence>
+      </ConditionOccurrences>
+    </Condition>
+    <Condition uId="17695099599900077">
+      <Title language="German" value="Localization"/>
+      <ConditionOccurrences>
+        <ConditionOccurrence uId="17695099984240146">
+          <Symbol language="German" value="de"/>
+          <Title language="German" value="German"/>
+          <SourceCode codeLanguage="Python" sourceCodeType="LogArg" value="( &quot;de_DE&quot; == localization )"/>
+        </ConditionOccurrence>
+        <ConditionOccurrence uId="17695099984260148">
+          <Symbol language="German" value="*"/>
+          <Title language="German" value="Nein"/>
+        </ConditionOccurrence>
+      </ConditionOccurrences>
+    </Condition>
+    <Condition uId="17695102326710216">
+      <Title language="German" value="Requestes item code"/>
+      <ConditionOccurrences>
+        <ConditionOccurrence uId="17695103847460300">
+          <Symbol language="German" value="person.name"/>
+          <Title language="German" value="A complete name consisting of first name and last name should be returned."/>
+          <SourceCode codeLanguage="Python" sourceCodeType="LogArg" value="( &quot;person.name&quot; == item )"/>
+        </ConditionOccurrence>
+        <ConditionOccurrence uId="17695107938060307">
+          <Symbol language="German" value="person.first_name"/>
+          <Title language="German" value="A first name should be returned."/>
+          <SourceCode codeLanguage="Python" sourceCodeType="LogArg" value="( &quot;person.first_name&quot; == item )"/>
+        </ConditionOccurrence>
+        <ConditionOccurrence uId="17695103847480302">
+          <Symbol language="German" value="person.last_name"/>
+          <Title language="German" value="A last name should be returned."/>
+          <SourceCode codeLanguage="Python" sourceCodeType="LogArg" value="( &quot;person.last_name&quot; == item )"/>
+        </ConditionOccurrence>
+      </ConditionOccurrences>
+    </Condition>
+    <Condition uId="17695903472462972">
+      <Title language="German" value="Item person.first_name is"/>
+      <ConditionOccurrences>
+        <ConditionOccurrence uId="17695903929023217">
+          <Symbol language="German" value="unknown"/>
+          <Title language="German" value="In this case the item is not known in a concrete context."/>
+          <SourceCode codeLanguage="Python" sourceCodeType="LogArg" value="( None == instance.get_item(&quot;person.first_name&quot;) )"/>
+        </ConditionOccurrence>
+        <ConditionOccurrence uId="17695903929043219">
+          <Symbol language="German" value="known"/>
+          <Title language="German" value="In this case a value is known in a concrete context."/>
+        </ConditionOccurrence>
+      </ConditionOccurrences>
+    </Condition>
+    <Condition uId="17695905386023456">
+      <Title language="German" value="Item person.last_name is"/>
+      <ConditionOccurrences>
+        <ConditionOccurrence uId="17695905386063460">
+          <Symbol language="German" value="unknown"/>
+          <Title language="German" value="In this case the item is not known in a concrete context."/>
+          <SourceCode codeLanguage="Python" sourceCodeType="LogArg" value="( None == instance.get_item(&quot;person.last_name&quot;) )"/>
+        </ConditionOccurrence>
+        <ConditionOccurrence uId="17695905388243463">
+          <Symbol language="German" value="known"/>
+          <Title language="German" value="In this case a value is known in a concrete context."/>
+        </ConditionOccurrence>
+      </ConditionOccurrences>
+    </Condition>
+  </Conditions>
+  <Actions>
+    <Action uId="17695167772830529">
+      <Title language="German" value="Creating data with de_Provider"/>
+      <ActionOccurrences>
+        <ActionOccurrence uId="17695185285120771">
+          <Symbol language="German" value="person.name"/>
+          <SourceCode codeLanguage="Python" sourceCodeType="StmtSeq" value="return Person.get_name(item_data)"/>
+        </ActionOccurrence>
+        <ActionOccurrence uId="17695185931131981">
+          <Symbol language="German" value="person.first_name"/>
+          <SourceCode codeLanguage="Python" sourceCodeType="StmtSeq" value="return Person.get_first_name(item_data)"/>
+        </ActionOccurrence>
+        <ActionOccurrence uId="17695186092092347">
+          <Symbol language="German" value="person.last_name"/>
+          <SourceCode codeLanguage="Python" sourceCodeType="StmtSeq" value="return Person.get_last_name(item_data)"/>
+        </ActionOccurrence>
+      </ActionOccurrences>
+    </Action>
+    <Action uId="17695186434503090">
+      <Title language="German" value="Creating data with de_Provider and saving in current context"/>
+      <ActionOccurrences>
+        <ActionOccurrence uId="17695186434533093">
+          <Symbol language="German" value="person.name"/>
+          <SourceCode codeLanguage="Python" sourceCodeType="StmtSeq" value="&lt;br/&gt;instance.add_item(&quot;person.first_name&quot;, Person.get_first_name(item_data))&lt;br/&gt;instance.add_item(&quot;person.last_name&quot;, Person.get_last_name(item_data))&lt;br/&gt;first_name = instance.get_item(&quot;person.first_name&quot;)&lt;br/&gt;last_name = instance.get_item(&quot;person.last_name&quot;)&lt;br/&gt;instance.add_item(&quot;person.name&quot;, f&quot;{first_name} {last_name}&quot;)&lt;br/&gt;"/>
+        </ActionOccurrence>
+        <ActionOccurrence uId="17695186434563096">
+          <Symbol language="German" value="person.first_name"/>
+          <SourceCode codeLanguage="Python" sourceCodeType="StmtSeq" value="instance.add_item(item, Person.get_first_name(item_data))"/>
+        </ActionOccurrence>
+        <ActionOccurrence uId="17695186434583098">
+          <Symbol language="German" value="person.last_name"/>
+          <SourceCode codeLanguage="Python" sourceCodeType="StmtSeq" value="instance.add_item(item, Person.get_last_name(item_data))"/>
+        </ActionOccurrence>
+      </ActionOccurrences>
+    </Action>
+    <Action uId="17695186572103101">
+      <Title language="German" value="Creating data with Faker"/>
+      <ActionOccurrences>
+        <ActionOccurrence uId="17695186572133104">
+          <Symbol language="German" value="person.name"/>
+          <SourceCode codeLanguage="Python" sourceCodeType="StmtSeq" value="fake = Faker(localization)&lt;br/&gt;match item_data.get(&quot;sex&quot;):&lt;br/&gt;    case &quot;f&quot;:&lt;br/&gt;        return fake.name_female()&lt;br/&gt;    case &quot;m&quot;:&lt;br/&gt;        return fake.name_male()&lt;br/&gt;    case &quot;d&quot;:&lt;br/&gt;        return fake.name_nonbinary()&lt;br/&gt;    case _:&lt;br/&gt;        return fake.name()"/>
+        </ActionOccurrence>
+        <ActionOccurrence uId="17695186572163107">
+          <Symbol language="German" value="person.first_name"/>
+          <SourceCode codeLanguage="Python" sourceCodeType="StmtSeq" value="fake = Faker(localization)&lt;br/&gt;match item_data.get(&quot;sex&quot;):&lt;br/&gt;    case &quot;f&quot;:&lt;br/&gt;        return fake.first_name_female()&lt;br/&gt;    case &quot;m&quot;:&lt;br/&gt;        return fake.first_name_male()&lt;br/&gt;    case &quot;d&quot;:&lt;br/&gt;        return fake.first_name_nonbinary()&lt;br/&gt;    case _:&lt;br/&gt;        return fake.first_name()"/>
+        </ActionOccurrence>
+        <ActionOccurrence uId="17695186572183109">
+          <Symbol language="German" value="person.last_name"/>
+          <SourceCode codeLanguage="Python" sourceCodeType="StmtSeq" value="fake = Faker(localization)&lt;br/&gt;match item_data.get(&quot;sex&quot;):&lt;br/&gt;    case &quot;f&quot;:&lt;br/&gt;        return fake.last_name_female()&lt;br/&gt;    case &quot;m&quot;:&lt;br/&gt;        return fake.last_name_male()&lt;br/&gt;    case &quot;d&quot;:&lt;br/&gt;        return fake.last_name_nonbinary()&lt;br/&gt;    case _:&lt;br/&gt;        return fake.last_name()"/>
+        </ActionOccurrence>
+      </ActionOccurrences>
+    </Action>
+    <Action uId="17695186576503112">
+      <Title language="German" value="Creating data with Faker and saving in current context"/>
+      <ActionOccurrences>
+        <ActionOccurrence uId="17695186576533115">
+          <Symbol language="German" value="person.name"/>
+          <SourceCode codeLanguage="Python" sourceCodeType="StmtSeq" value="fake = Faker(localization)&lt;br/&gt;match item_data.get(&quot;sex&quot;):&lt;br/&gt;    case &quot;f&quot;:&lt;br/&gt;        instance.add_item(item, fake.name_female())&lt;br/&gt;    case &quot;m&quot;:&lt;br/&gt;        instance.add_item(item, fake.name_male())&lt;br/&gt;    case &quot;d&quot;:&lt;br/&gt;        instance.add_item(item, fake.name_nonbinary())&lt;br/&gt;    case _:&lt;br/&gt;        instance.add_item(item, fake.name())"/>
+        </ActionOccurrence>
+        <ActionOccurrence uId="17695186576563118">
+          <Symbol language="German" value="person.first_name"/>
+          <SourceCode codeLanguage="Python" sourceCodeType="StmtSeq" value="fake = Faker(localization)&lt;br/&gt;match item_data.get(&quot;sex&quot;):&lt;br/&gt;    case &quot;f&quot;:&lt;br/&gt;        instance.add_item(item, fake.first_name_female())&lt;br/&gt;    case &quot;m&quot;:&lt;br/&gt;        instance.add_item(item, fake.first_name_male())&lt;br/&gt;    case &quot;d&quot;:&lt;br/&gt;        instance.add_item(item, fake.first_name_nonbinary())&lt;br/&gt;    case _:&lt;br/&gt;        instance.add_item(item, fake.first_name())"/>
+        </ActionOccurrence>
+        <ActionOccurrence uId="17695186576583120">
+          <Symbol language="German" value="person.last_name"/>
+          <SourceCode codeLanguage="Python" sourceCodeType="StmtSeq" value="fake = Faker(localization)&lt;br/&gt;match item_data.get(&quot;sex&quot;):&lt;br/&gt;    case &quot;f&quot;:&lt;br/&gt;        instance.add_item(item, fake.last_name_female())&lt;br/&gt;    case &quot;m&quot;:&lt;br/&gt;        instance.add_item(item, fake.last_name_male())&lt;br/&gt;    case &quot;d&quot;:&lt;br/&gt;        instance.add_item(item, fake.last_name_nonbinary())&lt;br/&gt;    case _:&lt;br/&gt;        instance.add_item(item, fake.last_name())"/>
+        </ActionOccurrence>
+      </ActionOccurrences>
+    </Action>
+    <Action uId="17695907761703534">
+      <Title language="German" value="Calculate person.name  from stored individual values"/>
+      <SourceCode codeLanguage="Python" sourceCodeType="StmtSeq" value="first_name = instance.get_item(&quot;person.first_name&quot;)&lt;br/&gt;last_name = instance.get_item(&quot;person.last_name&quot;)&lt;br/&gt;instance.add_item(&quot;person.name&quot;, f&quot;{first_name} {last_name}&quot;)"/>
+    </Action>
+    <Action uId="11446800828767967">
+      <Title language="German" value="Return of data stored in the current context"/>
+      <SourceCode codeLanguage="Python" sourceCodeType="StmtSeq" value="return instance.get_item(item)"/>
+    </Action>
+    <Action uId="17695191031293175">
+      <Title language="German" value="Not Implemented Yet"/>
+      <SourceCode codeLanguage="Python" sourceCodeType="StmtSeq" value="pass"/>
+    </Action>
+  </Actions>
+  <Rules lastId="26">
+    <Rule id="5">
+      <ConditionOccurrenceLink link="17695051881989529"/>
+      <ConditionOccurrenceLink link="17695070862679776"/>
+      <ConditionOccurrenceLink link="17695099984240146"/>
+      <ConditionOccurrenceLink link="17695103847460300"/>
+      <ActionOccurrenceLink link="17695185285120771"/>
+    </Rule>
+    <Rule id="6">
+      <ConditionOccurrenceLink link="17695051881989529"/>
+      <ConditionOccurrenceLink link="17695070862679776"/>
+      <ConditionOccurrenceLink link="17695099984240146"/>
+      <ConditionOccurrenceLink link="17695107938060307"/>
+      <ActionOccurrenceLink link="17695185931131981"/>
+    </Rule>
+    <Rule id="7">
+      <ConditionOccurrenceLink link="17695051881989529"/>
+      <ConditionOccurrenceLink link="17695070862679776"/>
+      <ConditionOccurrenceLink link="17695099984240146"/>
+      <ConditionOccurrenceLink link="17695103847480302"/>
+      <ActionOccurrenceLink link="17695186092092347"/>
+    </Rule>
+    <Rule id="8">
+      <ConditionOccurrenceLink link="17695051881989529"/>
+      <ConditionOccurrenceLink link="17695070862679776"/>
+      <ConditionOccurrenceLink link="17695099984260148"/>
+      <ConditionOccurrenceLink link="17695103847460300"/>
+      <ActionOccurrenceLink link="17695186572133104"/>
+    </Rule>
+    <Rule id="9">
+      <ConditionOccurrenceLink link="17695051881989529"/>
+      <ConditionOccurrenceLink link="17695070862679776"/>
+      <ConditionOccurrenceLink link="17695099984260148"/>
+      <ConditionOccurrenceLink link="17695107938060307"/>
+      <ActionOccurrenceLink link="17695186572163107"/>
+    </Rule>
+    <Rule id="10">
+      <ConditionOccurrenceLink link="17695051881989529"/>
+      <ConditionOccurrenceLink link="17695070862679776"/>
+      <ConditionOccurrenceLink link="17695099984260148"/>
+      <ConditionOccurrenceLink link="17695103847480302"/>
+      <ActionOccurrenceLink link="17695186572183109"/>
+    </Rule>
+    <Rule id="23">
+      <ConditionOccurrenceLink link="17695051881989529"/>
+      <ConditionOccurrenceLink link="17695070862659774"/>
+      <ConditionOccurrenceLink link="17695092231180023"/>
+      <ConditionOccurrenceLink link="17695099984240146"/>
+      <ConditionOccurrenceLink link="17695103847460300"/>
+      <ActionOccurrenceLink link="17695186434533093"/>
+      <ActionLink link="11446800828767967"/>
+      <ConditionOccurrenceLink link="17695903929023217"/>
+      <ConditionOccurrenceLink link="17695905386063460"/>
+    </Rule>
+    <Rule id="24">
+      <ConditionOccurrenceLink link="17695051881989529"/>
+      <ConditionOccurrenceLink link="17695070862659774"/>
+      <ConditionOccurrenceLink link="17695092231180023"/>
+      <ConditionOccurrenceLink link="17695099984240146"/>
+      <ConditionOccurrenceLink link="17695103847460300"/>
+      <ActionOccurrenceLink link="17695186434563096"/>
+      <ActionLink link="11446800828767967"/>
+      <ConditionOccurrenceLink link="17695903929023217"/>
+      <ConditionOccurrenceLink link="17695905388243463"/>
+      <ActionLink link="17695907761703534"/>
+    </Rule>
+    <Rule id="25">
+      <ConditionOccurrenceLink link="17695051881989529"/>
+      <ConditionOccurrenceLink link="17695070862659774"/>
+      <ConditionOccurrenceLink link="17695092231180023"/>
+      <ConditionOccurrenceLink link="17695099984240146"/>
+      <ConditionOccurrenceLink link="17695103847460300"/>
+      <ActionOccurrenceLink link="17695186434583098"/>
+      <ActionLink link="11446800828767967"/>
+      <ConditionOccurrenceLink link="17695903929043219"/>
+      <ConditionOccurrenceLink link="17695905386063460"/>
+      <ActionLink link="17695907761703534"/>
+    </Rule>
+    <Rule id="26">
+      <ConditionOccurrenceLink link="17695051881989529"/>
+      <ConditionOccurrenceLink link="17695070862659774"/>
+      <ConditionOccurrenceLink link="17695092231180023"/>
+      <ConditionOccurrenceLink link="17695099984240146"/>
+      <ConditionOccurrenceLink link="17695103847460300"/>
+      <ActionLink link="11446800828767967"/>
+      <ConditionOccurrenceLink link="17695903929043219"/>
+      <ConditionOccurrenceLink link="17695905388243463"/>
+      <ActionLink link="17695907761703534"/>
+    </Rule>
+    <Rule id="13">
+      <ConditionOccurrenceLink link="17695051881989529"/>
+      <ConditionOccurrenceLink link="17695070862659774"/>
+      <ConditionOccurrenceLink link="17695092231180023"/>
+      <ConditionOccurrenceLink link="17695099984240146"/>
+      <ConditionOccurrenceLink link="17695107938060307"/>
+      <ActionOccurrenceLink link="17695186434533093"/>
+      <ActionLink link="11446800828767967"/>
+    </Rule>
+    <Rule id="14">
+      <ConditionOccurrenceLink link="17695051881989529"/>
+      <ConditionOccurrenceLink link="17695070862659774"/>
+      <ConditionOccurrenceLink link="17695092231180023"/>
+      <ConditionOccurrenceLink link="17695099984240146"/>
+      <ConditionOccurrenceLink link="17695103847480302"/>
+      <ActionOccurrenceLink link="17695186434583098"/>
+      <ActionLink link="11446800828767967"/>
+    </Rule>
+    <Rule id="19">
+      <ConditionOccurrenceLink link="17695051881989529"/>
+      <ConditionOccurrenceLink link="17695070862659774"/>
+      <ConditionOccurrenceLink link="17695092231180023"/>
+      <ConditionOccurrenceLink link="17695099984260148"/>
+      <ConditionOccurrenceLink link="17695103847460300"/>
+      <ActionLink link="11446800828767967"/>
+      <ActionOccurrenceLink link="17695186576533115"/>
+      <ConditionOccurrenceLink link="17695903929023217"/>
+      <ConditionOccurrenceLink link="17695905386063460"/>
+    </Rule>
+    <Rule id="20">
+      <ConditionOccurrenceLink link="17695051881989529"/>
+      <ConditionOccurrenceLink link="17695070862659774"/>
+      <ConditionOccurrenceLink link="17695092231180023"/>
+      <ConditionOccurrenceLink link="17695099984260148"/>
+      <ConditionOccurrenceLink link="17695103847460300"/>
+      <ActionLink link="11446800828767967"/>
+      <ActionOccurrenceLink link="17695186576563118"/>
+      <ConditionOccurrenceLink link="17695903929023217"/>
+      <ConditionOccurrenceLink link="17695905388243463"/>
+      <ActionLink link="17695907761703534"/>
+    </Rule>
+    <Rule id="21">
+      <ConditionOccurrenceLink link="17695051881989529"/>
+      <ConditionOccurrenceLink link="17695070862659774"/>
+      <ConditionOccurrenceLink link="17695092231180023"/>
+      <ConditionOccurrenceLink link="17695099984260148"/>
+      <ConditionOccurrenceLink link="17695103847460300"/>
+      <ActionLink link="11446800828767967"/>
+      <ActionOccurrenceLink link="17695186576583120"/>
+      <ConditionOccurrenceLink link="17695903929043219"/>
+      <ConditionOccurrenceLink link="17695905386063460"/>
+      <ActionLink link="17695907761703534"/>
+    </Rule>
+    <Rule id="22">
+      <ConditionOccurrenceLink link="17695051881989529"/>
+      <ConditionOccurrenceLink link="17695070862659774"/>
+      <ConditionOccurrenceLink link="17695092231180023"/>
+      <ConditionOccurrenceLink link="17695099984260148"/>
+      <ConditionOccurrenceLink link="17695103847460300"/>
+      <ActionLink link="11446800828767967"/>
+      <ConditionOccurrenceLink link="17695903929043219"/>
+      <ConditionOccurrenceLink link="17695905388243463"/>
+      <ActionLink link="17695907761703534"/>
+    </Rule>
+    <Rule id="16">
+      <ConditionOccurrenceLink link="17695051881989529"/>
+      <ConditionOccurrenceLink link="17695070862659774"/>
+      <ConditionOccurrenceLink link="17695092231180023"/>
+      <ConditionOccurrenceLink link="17695099984260148"/>
+      <ConditionOccurrenceLink link="17695107938060307"/>
+      <ActionLink link="11446800828767967"/>
+      <ActionOccurrenceLink link="17695186576533115"/>
+    </Rule>
+    <Rule id="17">
+      <ConditionOccurrenceLink link="17695051881989529"/>
+      <ConditionOccurrenceLink link="17695070862659774"/>
+      <ConditionOccurrenceLink link="17695092231180023"/>
+      <ConditionOccurrenceLink link="17695099984260148"/>
+      <ConditionOccurrenceLink link="17695103847480302"/>
+      <ActionLink link="11446800828767967"/>
+      <ActionOccurrenceLink link="17695186576583120"/>
+    </Rule>
+    <Rule id="11">
+      <ConditionOccurrenceLink link="17695051881989529"/>
+      <ConditionOccurrenceLink link="17695070862659774"/>
+      <ConditionOccurrenceLink link="17695092231160021"/>
+      <ActionLink link="11446800828767967"/>
+    </Rule>
+    <Rule id="18">
+      <ConditionOccurrenceLink link="17695051882009531"/>
+      <ActionLink link="17695191031293175"/>
+    </Rule>
+  </Rules>
+  <Title language="German" value="Hier doppel-klicken um den Titel für die Entscheidungstabelle einzugeben"/>
+  <UrlsOut>
+    <Url title="Ordner" url="file:///./"/>
+  </UrlsOut>
+  <SourceCode codeLanguage="Python" sourceCodeType="Prolog" value="# $$BasicIndentLevel=2&lt;br/&gt;from faker import Faker&lt;br/&gt;from de_DE.person import Person&lt;br/&gt;import SynData&lt;br/&gt;&lt;br/&gt;class ItemBuilderEngine:&lt;br/&gt;&lt;br/&gt;    def execute(self, instance: SynData, localization: str, item: str, item_data: dict):"/>
+</LFET>

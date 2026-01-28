@@ -1,0 +1,9 @@
+lfet.project.ini:
+  ide.default: Python
+  ide.Python:
+    Enabled: true
+    Source:
+      Path: E:\data\schweier\rbtfrmwrk\SynData\src\SynData
+      Encoding: UTF-8
+      CreateMissingFolders: true
+    Interface.Enabled: false
