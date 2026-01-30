@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<LFET version="LF-ET 2.4.1 (260127a)" language="German" saveDate="2026.01.28 at 14:47:20 CET" saveUser="dschweie">
+<LFET version="LF-ET 2.4.1 (260127a)" language="German" saveDate="2026.01.29 at 10:44:31 CET" saveUser="dschweie">
   <Conditions>
     <Condition uId="17695068074589721">
       <Title language="German" value="Current Mode"/>
@@ -48,8 +48,8 @@
       <Title language="German" value="Localization"/>
       <ConditionOccurrences>
         <ConditionOccurrence uId="17695099984240146">
-          <Symbol language="German" value="de"/>
-          <Title language="German" value="German"/>
+          <Symbol language="German" value="de_DE"/>
+          <Title language="German" value="Germany"/>
           <SourceCode codeLanguage="Python" sourceCodeType="LogArg" value="( &quot;de_DE&quot; == localization )"/>
         </ConditionOccurrence>
         <ConditionOccurrence uId="17695099984260148">
@@ -164,7 +164,7 @@
       <ActionOccurrences>
         <ActionOccurrence uId="17695186576533115">
           <Symbol language="German" value="person.name"/>
-          <SourceCode codeLanguage="Python" sourceCodeType="StmtSeq" value="fake = Faker(localization)&lt;br/&gt;match item_data.get(&quot;sex&quot;):&lt;br/&gt;    case &quot;f&quot;:&lt;br/&gt;        instance.add_item(item, fake.name_female())&lt;br/&gt;    case &quot;m&quot;:&lt;br/&gt;        instance.add_item(item, fake.name_male())&lt;br/&gt;    case &quot;d&quot;:&lt;br/&gt;        instance.add_item(item, fake.name_nonbinary())&lt;br/&gt;    case _:&lt;br/&gt;        instance.add_item(item, fake.name())"/>
+          <SourceCode codeLanguage="Python" sourceCodeType="StmtSeq" value="fake = Faker(localization)&lt;br/&gt;match item_data.get(&quot;sex&quot;):&lt;br/&gt;    case &quot;f&quot;:&lt;br/&gt;        instance.add_item(&quot;person.first_name&quot;, fake.first_name_female())&lt;br/&gt;        instance.add_item(&quot;person.last_name&quot;, fake.last_name_female())&lt;br/&gt;    case &quot;m&quot;:&lt;br/&gt;        instance.add_item(&quot;person.first_name&quot;, fake.first_name_male())&lt;br/&gt;        instance.add_item(&quot;person.last_name&quot;, fake.last_name_male())&lt;br/&gt;    case &quot;d&quot;:&lt;br/&gt;        instance.add_item(&quot;person.first_name&quot;, fake.first_name_nonbinary())&lt;br/&gt;        instance.add_item(&quot;person.last_name&quot;, fake.last_name_nonbinary())&lt;br/&gt;    case _:&lt;br/&gt;        instance.add_item(&quot;person.first_name&quot;, fake.first_name_nonbinary())&lt;br/&gt;        instance.add_item(&quot;person.last_name&quot;, fake.last_name_nonbinary())&lt;br/&gt;&lt;br/&gt;first_name = instance.get_item(&quot;person.first_name&quot;)&lt;br/&gt;last_name = instance.get_item(&quot;person.last_name&quot;)&lt;br/&gt;instance.add_item(&quot;person.name&quot;, f&quot;{first_name} {last_name}&quot;)&lt;br/&gt;"/>
         </ActionOccurrence>
         <ActionOccurrence uId="17695186576563118">
           <Symbol language="German" value="person.first_name"/>
@@ -189,7 +189,7 @@
       <SourceCode codeLanguage="Python" sourceCodeType="StmtSeq" value="pass"/>
     </Action>
   </Actions>
-  <Rules lastId="26">
+  <Rules lastId="27">
     <Rule id="5">
       <ConditionOccurrenceLink link="17695051881989529"/>
       <ConditionOccurrenceLink link="17695070862679776"/>
@@ -278,13 +278,13 @@
       <ConditionOccurrenceLink link="17695905388243463"/>
       <ActionLink link="17695907761703534"/>
     </Rule>
-    <Rule id="13">
+    <Rule id="27">
       <ConditionOccurrenceLink link="17695051881989529"/>
       <ConditionOccurrenceLink link="17695070862659774"/>
       <ConditionOccurrenceLink link="17695092231180023"/>
       <ConditionOccurrenceLink link="17695099984240146"/>
       <ConditionOccurrenceLink link="17695107938060307"/>
-      <ActionOccurrenceLink link="17695186434533093"/>
+      <ActionOccurrenceLink link="17695186434563096"/>
       <ActionLink link="11446800828767967"/>
     </Rule>
     <Rule id="14">
