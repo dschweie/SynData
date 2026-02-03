@@ -4,7 +4,9 @@ lfet.project.ini:
     Enabled: true
     EmptyLines: false
     Source:
-      Path: E:\data\schweier\rbtfrmwrk\SynData\src\SynData
+      Path: ${project.root}/../src/SynData
       Encoding: UTF-8
       CreateMissingFolders: true
     Interface.Enabled: false
+    CommentsFilePaths.RemoveAllBefore: \SynData\
+    

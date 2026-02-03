@@ -14,6 +14,10 @@ class SynData:
     MODE_DEF = 0
     MODE_REP = 1
 
+    GLOBAL      = "global"
+    TEST_SUITE  = "suite"
+    TEST_CASE   = "test"
+
     """ Hier findet sich die Dokumentation dieser Bibliothek"""
 
     @not_keyword
@@ -36,7 +40,7 @@ class SynData:
                     self.logfile = f"{path}/{logfile}"
 
     @keyword
-    def Set_Context(self, context, localization="en_US"):
+    def Set_Context(self, context, localization="en_US", ):
         if (None == self.data.get(context)):
             self.data[context] = {}
             self.data[context].update({"meta":{"localization" : localization}})
