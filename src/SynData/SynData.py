@@ -1,5 +1,9 @@
 # import random
+import datetime
+import time
+
 from robot.api.deco import keyword, library, not_keyword
+from robot.libraries.BuiltIn import BuiltIn
 
 from item_builder_engine import ItemBuilderEngine
 
@@ -13,13 +17,23 @@ class SynData:
     """ Hier findet sich die Dokumentation dieser Bibliothek"""
 
     @not_keyword
-    def __init__(self, localization="en_US"):
+    def __init__(self, localization="en_US", logging=True, logfile=None):
         self.mode = SynData.MODE_DEF
         self.context = None
         self.data = {}
         self.default_localization = localization
         self.ibe = ItemBuilderEngine()
-
+        self.logging = (True == logging)
+        if (self.logging):
+            path = BuiltIn().get_variable_value("${OUTPUT DIR}")
+            if (None == logfile):
+                file_name = datetime.datetime.now().strftime("SynData-%Y%m%d-%H%M%S")
+                self.logfile = f"{path}/{file_name}.log"
+            else:
+                if (-1 == logfile.find(".")):
+                    self.logfile = f"{path}/{logfile}.log"
+                else:
+                    self.logfile = f"{path}/{logfile}"
 
     @keyword
     def Set_Context(self, context, localization="en_US"):
@@ -45,7 +59,7 @@ class SynData:
             localization = self.default_localization
         else:
             localization = self.data[self.Get_Context()]["meta"]["localization"]
-        return self.ibe.execute(self, localization, "person.name", {"sex":sex})
+        return self.ibe.execute(self, localization, "Get Name", "person.name", {"sex":sex})
     
     
     @keyword
@@ -54,7 +68,7 @@ class SynData:
             localization = self.default_localization
         else:
             localization = self.data[self.Get_Context()]["meta"]["localization"]
-        return self.ibe.execute(self, localization, "person.first_name", {"sex":sex})
+        return self.ibe.execute(self, localization, "Get First Name", "person.first_name", {"sex":sex})
     
     
     @keyword
@@ -63,7 +77,7 @@ class SynData:
             localization = self.default_localization
         else:
             localization = self.data[self.Get_Context()]["meta"]["localization"]
-        return self.ibe.execute(self, localization, "person.last_name", {"sex":sex})
+        return self.ibe.execute(self, localization, "Get Last Name", "person.last_name", {"sex":sex})
 
 
     @not_keyword
@@ -83,6 +97,15 @@ class SynData:
         if( None != self.context ):
             self.data[self.context].update({item: value})
 
+
+    def add_log_entry(self, keyword, item, value):
+        if ((self.logging) and (None != self.logfile)):
+            ts = datetime.datetime.now().strftime("%Y-%m-%d %X") + ("-" if time.timezone > 0 else "+") + time.strftime("%H:%M", time.gmtime(abs(time.timezone)))
+            suite = BuiltIn().get_variable_value("${SUITE NAME}")
+            test_case = BuiltIn().get_variable_value("${TEST NAME}")
+            file = open(self.logfile, "a")
+            file.write(f"{ts},{suite},{test_case},{keyword},{item},{value}\n")
+            file.close()
 
 
     # @not_keyword
