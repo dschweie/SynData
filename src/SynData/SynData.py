@@ -40,7 +40,7 @@ class SynData:
                     self.logfile = f"{path}/{logfile}"
 
     @keyword
-    def Set_Context(self, context, localization="en_US", ):
+    def Set_Context(self, context, localization="en_US" ):
         if (None == self.data.get(context)):
             self.data[context] = {}
             self.data[context].update({"meta":{"localization" : localization}})
