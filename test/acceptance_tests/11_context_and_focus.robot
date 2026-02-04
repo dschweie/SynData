@@ -54,11 +54,11 @@ Test 24 New Context With Test Focus Should Generate A New Name
 Test 31 Create A New Global Context Without Release
     Set Context    Uncle    localization=de_DE    focus=global
     ${current_context}    Get Context
-    Should Not Be Equal As Strings    Uncle    ${current_context}
+    Should Be Equal As Strings    Uncle    ${current_context}
 
 Test 32 The Global Context Should Be Still Set
     ${current_context}    Get Context
-    Should Not Be Equal As Strings    Uncle    ${current_context}
+    Should Be Equal As Strings    Uncle    ${current_context}
 
 Test 41 Create A New Suite Context Without Release
     Set Context    Aunt    localization=de_DE    focus=suite
