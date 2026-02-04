@@ -37,16 +37,16 @@ date is generated or taken from a data source. In order to largely eliminate
 sources of error, the dependencies are modeled in decision tables and the 
 Python code is generated from the decision tables.
 
-This project uses the [LF-ET](https://www.lohrfink.de/en/solutions/lf-et/) 
+This project uses the [LF-ET](https://www.lohrfink.de/en/solutions/lf-et/){:target="_blank"}
 decision table editor from 
-[LOHRFINK software engineering GmbH & Co. KG](https://www.lohrfink.de/en/company/about-us/) 
+[LOHRFINK software engineering GmbH & Co. KG](https://www.lohrfink.de/en/company/about-us/){:target="_blank"} 
 to create and maintain the decision tables. 
-In [LF-ET](https://www.lohrfink.de/en/solutions/lf-et/), the rules can be 
+In [LF-ET](https://www.lohrfink.de/en/solutions/lf-et/){:target="_blank"}, the rules can be 
 filtered in almost any way, so that "excerpts" from a large set of 
 rules can also be analyzed. 
-[LF-ET](https://www.lohrfink.de/en/solutions/lf-et/) provides automated 
+[LF-ET](https://www.lohrfink.de/en/solutions/lf-et/){:target="_blank"} provides automated 
 verification of completeness, absence of redundancies and contradictions. From 
-such a decision table, [LF-ET](https://www.lohrfink.de/en/solutions/lf-et/) can 
+such a decision table, [LF-ET](https://www.lohrfink.de/en/solutions/lf-et/){:target="_blank"} can 
 generate the corresponding source code for different programming languages, 
 which is also used in this project. 
 
@@ -60,7 +60,7 @@ comment lines:
 ````
 
 This project is supported by 
-[LOHRFINK software engineering GmbH & Co. KG](https://www.lohrfink.de/en/company/about-us/), 
+[LOHRFINK software engineering GmbH & Co. KG](https://www.lohrfink.de/en/company/about-us/){:target="_blank"}, 
 and a current version of the decision table editor LF-ET is available at the 
 following link: https://www.lohrfink.de/lfet/lfet.latest.inst
 
@@ -71,11 +71,11 @@ code and data can be found in the folder ``src/SynData/de_DE``.
 # Special thanks
 
 I would like to thank 
-[LOHRFINK software engineering GmbH & Co. KG](https://www.lohrfink.de/en/company/about-us/) 
+[LOHRFINK software engineering GmbH & Co. KG](https://www.lohrfink.de/en/company/about-us/){:target="_blank"} 
 for providing a project license for this project. Thanks to the project license 
-for the [LF-ET](https://www.lohrfink.de/en/solutions/lf-et/) decision table 
-editor, the process logic for generation can be modeled in decision tables and 
-the corresponding Python code can be generated.
+for the [LF-ET](https://www.lohrfink.de/en/solutions/lf-et/){:target="_blank"} 
+decision table editor, the process logic for generation can be modeled in 
+decision tables and the corresponding Python code can be generated.
 
 This library is also the result of constructive discussions with the 
 Robot Framework community. Special thanks go to René, who gave me the idea that 
