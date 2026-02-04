@@ -67,7 +67,7 @@ Test 41 Create A New Suite Context Without Release
 
 Test 42 The Suite Context Should Be Still Set
     ${current_context}    Get Context
-    Should Not Be Equal As Strings    Aunt    ${current_context}
+    Should Be Equal As Strings    Aunt    ${current_context}
 
 *** Keywords ***
 Create Contexts With Global And Suite Focus
