@@ -135,3 +135,9 @@ dmypy.json
 /lfet/**/*.lfet.$bak.*
 /lfet/**/*.lfet.*.$bak
 /lfet/**/*.lfet_$temp
+
+# optional LF-ET license info
+/.lfet/*.info
+
+# Visual Studio 
+/.vscode/**
