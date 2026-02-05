@@ -2,6 +2,8 @@
 import datetime
 import time
 
+import pandas as pd
+
 from robot.api.deco import keyword, not_keyword, library
 from robot.libraries.BuiltIn import BuiltIn
 
@@ -91,7 +93,12 @@ class SynData:
         | ``logfile``      | During initialization, the caller can specify the name of the file for recording the test data. The specification is only evaluated if ``logging`` has the value ``True``. The default value is ``None``. In this case, the name is generated automatically. The format contains the date and time when the test was started. A concrete example might look like this: ``SynData-20260204-124643.log`` |
         | ``replayfile``   | The parameter can be used to pass the full path to a log file so that the file is set as the data source for the keywords. If a file name is transferred here, many functions of the library, such as context management, are overridden. The default value is ``None``, which means that the generators are used to generate data. |
         """
-        self.mode = SynData.MODE_DEF
+        if(None == replayfile):
+            self.mode = SynData.MODE_DEF
+            self.replayfile = None
+        else:
+            self.mode = SynData.MODE_REP
+            self.replayfile = replayfile
         self.context = None
         self.data = {}
         self.default_localization = localization
@@ -101,12 +108,13 @@ class SynData:
             path = BuiltIn().get_variable_value("${OUTPUT DIR}")
             if (None == logfile):
                 file_name = datetime.datetime.now().strftime("SynData-%Y%m%d-%H%M%S")
-                self.logfile = f"{path}/{file_name}.log"
+                self.logfile = f"{path}/{file_name}.csv"
             else:
                 if (-1 == logfile.find(".")):
-                    self.logfile = f"{path}/{logfile}.log"
+                    self.logfile = f"{path}/{logfile}.csv"
                 else:
                     self.logfile = f"{path}/{logfile}"
+            self.logdata = pd.DataFrame(None, columns=["timestamp", "item", "value", "test_suite", "test_case", "keyword"])
         SynData.INSTANCE = self
 
     def get_keyword_names(self):
@@ -164,7 +172,6 @@ class SynData:
             SynData.INSTANCE.data[context_id] = {}
             SynData.INSTANCE.data[context_id].update({"meta":{"localization" : localization, "name" : context, "focus" : focus.lower()}})
         SynData.INSTANCE.context = context_id
-
     
     @staticmethod
     @keyword(tags=["Context"])
@@ -177,7 +184,6 @@ class SynData:
         is also not guaranteed if no context is set.
         """
         SynData.INSTANCE.context = None
-
 
     @staticmethod
     @keyword(tags=["Context"])
@@ -214,7 +220,6 @@ class SynData:
         else: 
             # In this case, no context is set and therefore None is returned.
             return None
-
     
     @staticmethod
     @keyword(tags=["Person"])
@@ -230,7 +235,6 @@ class SynData:
         else:
             localization = SynData.INSTANCE.data.get(SynData.INSTANCE.context).get("meta").get("localization")
         return SynData.INSTANCE.ibe.execute(SynData.INSTANCE, localization, "Get Name", "person.name", {"sex":sex})
-    
 
     @staticmethod    
     @keyword(tags=["Person"])
@@ -281,9 +285,12 @@ class SynData:
             ts = datetime.datetime.now().strftime("%Y-%m-%d %X") + ("-" if time.timezone > 0 else "+") + time.strftime("%H:%M", time.gmtime(abs(time.timezone)))
             suite = BuiltIn().get_variable_value("${SUITE NAME}")
             test_case = BuiltIn().get_variable_value("${TEST NAME}")
-            file = open(self.logfile, "a")
-            file.write(f"{ts},{suite},{test_case},{keyword},{item},{value}\n")
-            file.close()
+            self.logdata.loc[len(self.logdata)] = [ts, item, value, suite, test_case, keyword]
+            print(self.logdata)
+            self.logdata.to_csv(self.logfile, index_label="index")
+            #file = open(self.logfile, "a")
+            #file.write(f"{ts},{suite},{test_case},{keyword},{item},{value}\n")
+            #file.close()
 
     @not_keyword
     def _get_current_test_suite(self) -> str:
@@ -292,6 +299,9 @@ class SynData:
     @not_keyword
     def _get_current_test_case(self) -> str:    
         return BuiltIn().get_variable_value("${TEST NAME}")
+    
+    def get_replay_file(self) -> str:
+        return self.replayfile
 
     # @not_keyword
     # def Hello_World(self):
